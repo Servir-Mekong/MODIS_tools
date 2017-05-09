@@ -39,7 +39,7 @@ This system has been tested, ported, and run successfully on Ubuntu 14.04 OS wit
 ##############################
 
 **************************************
-******** Folder : NRT_Flood **********		Routines for near real-time and historic flooded areas products
+******** Folder : NRT_Flood **********
 **************************************
 
 Description: This set of programs downloads, processes, and applies classification algorithm to MODIS data to determine flooded areas, non-flooded areas, and areas where there is not enough data (due to cloud obscuration) to make a determination.
