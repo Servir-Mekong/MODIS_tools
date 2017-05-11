@@ -46,11 +46,11 @@ Description: This set of programs downloads, processes, and applies classificati
 
 Programs in this module and descriptions:
 1) fetch_historic.py - determines the day of the year and downloads M*D09Q1 products for the length of the MODIS Aqua and Terra record for the nearest available date on each year. If products in the "historic" directory are current, the program does not run. For each image, clouds are masked and per-pixel NDVI is calculated (250m resolution).
-2) calc_historic_average.py - averages the Aqua / Terra files in the "historic" dir to construct a combined MODIS Aqua / Terra average NDVI composite for that day of the year. Outputs are stored in the "reference_files" directory
+2) calc_avg.py - averages the Aqua / Terra files in the "historic" dir to construct a combined MODIS Aqua / Terra average NDVI composite for that day of the year. Outputs are stored in the "reference_files" directory
 3) fetch_NRT.py - fetches the latest MODIS Aqua / Terra data available on the NASA nrt servers. Clouds are filtered and NDVI is calculated at 250m resolution. Outputs are stored in the "daily_files_nrt" directory.
-4) calc_NRT_flood.py - calculates the NDVI of permanent water bodies using the "permanent_water_mask.tif" file and the historic NDVI composite. Pixels below the mean H2O NDVI threshold are classified "surface water". Outputs are surface water extent products (0 = No water, 1 = water, NaN = clouds/permanent water) generated for the day of year (avg_SW) and the latest NRT 4-day composite (SW_doy_year).
+4) calc_anom.py - calculates the NDVI of permanent water bodies using the "permanent_water_mask.tif" file and the historic NDVI composite. Pixels below the mean H2O NDVI threshold are classified "surface water". Outputs are surface water extent products (0 = No water, 1 = water, NaN = clouds/permanent water) generated for the day of year (avg_SW) and the latest NRT 4-day composite (SW_doy_year).
 
-The programs should be run in the following order: 
+The programs should be run in numerical order: 
 
 (1) --> (2) --> (3) --> (4)
 
