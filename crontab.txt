@@ -1,0 +1,74 @@
+SHELL=/bin/sh
+
+# Run the Near RealTime Scripts
+30 5 */1 * * cd /home/aakashSHELL=/bin/sh
+
+# Run the Near RealTime Scripts
+30 5 */1 * * cd /home/home/NRT_Flood && /usr/bin/python3 /home/home/NRT_Flood/fetch_NRT.py
+
+0 6 */1 * * cd /home/home/NRT_Flood && /usr/bin/python3 /home/home/NRT_Flood/calc_NRT_flood.py
+
+0 0 */1 * * cd /home/home/NRT_Flood && /usr/bin/python3 /home/home/NRT_Flood/fetch_historic.py >> /home/home/NRT_Flood/historic.log
+
+0 5 */1 * * cd /home/home/NRT_Flood && /usr/bin/python3 /home/home/NRT_Flood/calc_historic_avg.py 
+
+# Run the population script
+
+0 7 */1 * * cd /home/home/Socioeconomics && /usr/bin/python3 /home/home/Socioeconomics/population.py
+
+# Run the socioeconomics script
+
+10 7 */1 * * cd /home/home/Socioeconomics && /usr/bin/python3 /home/home/Socioeconomics/infrastructure.py
+
+# Run the landcoer script 
+
+30 7 */1 * * cd /home/home/Socioeconomics && /user/bin/python3 /home/home/Socioeconomics/landcover.py
+
+# Plot the pop and socioeconomics results
+
+50 7 */1 * * cd /home/home/Socioecnomics && /usr/bin/python3 /home/home/Socioecnomics/products/plot.py/NRT_Flood && /usr/bin/python3 /home/aakash/NRT_Flood/fetch_NRT.py
+
+0 6 */1 * * cd /home/aakash/NRT_Flood && /usr/bin/python3 /home/aakash/NRT_Flood/calc_NRT_flood.py
+
+0 0 */1 * * cd /home/aakash/NRT_Flood && /usr/bin/python3 /home/aakash/NRT_Flood/fetch_historic.py >> /home/aakash/NRT_Flood/historic.log
+
+0 5 */1 * * cd /home/aakash/NRT_Flood && /usr/bin/python3 /home/aakash/NRT_Flood/calc_historic_avg.py 
+
+# Run the population script
+
+0 7 */1 * * cd /home/aakash/Socioeconomics && /usr/bin/python3 /home/aakash/Socioeconomics/population.py
+
+# Run the socioeconomics script
+
+10 7 */1 * * cd /home/aakash/Socioeconomics && /usr/bin/python3 /home/aakash/Socioeconomics/infrastructure.py
+
+# Run the landcoer script 
+
+30 7 */1 * * cd /home/aakash/Socioeconomics && /user/bin/python3 /home/aakash/Socioeconomics/landcover.py
+
+# Plot the pop and socioeconomics results
+
+50 7 */1 * * cd /home/aakash/Socioecnomics && /usr/bin/python3 /home/aakash/Socioecnomics/products/plot.py
+
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
