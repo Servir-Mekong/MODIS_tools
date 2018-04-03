@@ -19,17 +19,38 @@ from numpy import *
 import shutil
 import itertools
 
+###########################################
+# Small function to grab the current date #
+###########################################
+
+def get_dates ():
+        year = str(datetime.datetime.now().year)
+        month = str(datetime.datetime.now().month)
+        day = str(datetime.datetime.now().day)
+        day_of_year = datetime.datetime.now().timetuple().tm_yday
+        doy = str(day_of_year - 0) # set this to go back x number of days
+
+        date= {
+        "year" : year,
+        "month": month,
+        "day" : day,
+        "doy" : doy}
+
+        return date
+
+dates = get_dates()
+
 #############################
 ########## Params ###########
 #############################
 
 # Set these to the dates and products you wish to analyze 
 product = "Q1"
-doy = '032' #dates['doy']
+doy = dates['doy']
 
-years = [x for x in range(2000,2016)] # does not look for 2016 data
+years = [x for x in range(2000,2017)] # does not look for 2016 data
 
-aqua_years = [x for x in range(2003,2016)] # does not look for 2002 historic data 
+aqua_years = [x for x in range(2003,2017)] # does not look for 2002 historic data 
 
 #############################
 ########## Classes ##########
